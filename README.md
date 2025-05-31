@@ -15,3 +15,6 @@ Compare performance vs. sequential fetching.
 
 Demonstrate idiomatic Go (interfaces, structs, error handling).
 
+
+# Getting started
+`make up` - will build docker image and run the hello world example, then die

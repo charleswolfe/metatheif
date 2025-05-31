@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    container_name: app
+    ports:
+      - "8001:80"
+    volumes:
+      - ./:/var/www/html/app/
+
