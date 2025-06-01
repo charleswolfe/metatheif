@@ -18,3 +18,13 @@ Demonstrate idiomatic Go (interfaces, structs, error handling).
 
 # Getting started
 `make up` - will build docker image and run the hello world example, then die
+
+No postman - no problem
+`curl -X POST http://localhost:8001/fetch \
+  -H "Content-Type: application/json" \
+  -d '{
+    "urls": [
+      "https://example.com",
+      "https://openai.com"
+    ]
+  }'`
