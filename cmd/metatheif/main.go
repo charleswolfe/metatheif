@@ -2,11 +2,8 @@ package main
 
 import (
 	"log"
-	//"fmt"
 	"net/http"
-
 	"metatheif/cmd/metatheif/handlers"
-
 )
 
 // main function to start the HTTP server
