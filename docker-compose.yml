@@ -4,6 +4,5 @@ services:
     container_name: app
     ports:
       - "8001:8080"
-    volumes:
-      - ./:/var/www/html/app/
+
 

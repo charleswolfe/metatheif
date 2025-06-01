@@ -21,8 +21,11 @@ type FetchResult struct {
 	Title  string `json:"title"`
 }
 
-// FetchURLs takes a slice of URLs and returns a slice of FetchResult.
-func FetchURLs(urls []string) []FetchResult {
+// FetchURLs is a variable holding the URL fetching function
+var FetchURLs = fetchURLs
+
+// fetchURLs takes a slice of URLs and returns a slice of FetchResult.
+func fetchURLs(urls []string) []FetchResult {
 	results := make([]FetchResult, 0)
 	ch := make(chan FetchResult)
 
@@ -37,18 +40,15 @@ func FetchURLs(urls []string) []FetchResult {
 			defer resp.Body.Close()
 
 			body, err := io.ReadAll(resp.Body)
-
-			//parse body
+			//todo handle error
 			title, err := parseHtmlBody(body, "title")
+			//todo handle error
 
 			ch <- FetchResult{
 				URL:    u,
 				Status: resp.StatusCode,
 				Title:  title,
 			}
-
-
-
 		}(url)
 	}
 

@@ -4,7 +4,7 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
-	"metatheif/cmd/metatheif/tasks"
+	"metatheif/cmd/metatheif/tasks/fetcher"
 )
 
 // It expects a POST request with a JSON body containing an array of URLs.
